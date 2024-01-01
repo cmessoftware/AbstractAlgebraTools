@@ -1,2 +1,2 @@
-# pygroup
-Group theory with python.
+# AbstractAlgebraTools
+Python abstract algebra tools
