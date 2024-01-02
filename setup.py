@@ -1,15 +1,20 @@
 from setuptools import setup
 
 setup(
-    name='pyexample',
-    version='0.1.0',    
+    name='AbstractAlgebraTools',
+    version='0.0.1',    
     description='Grupo theory academic practices',
-    url='https://github.com/cmessotfware/pygroup',
+    url='https://github.com/cmessotfware/AbstractAlgebraTools',
     author='Sergio Salanitri',
     author_email='cmessoftware@gmail.com',    
     license='BSD 2-clause',
-    packages=['pygroup'],
+    packages=['AbstractAlgebraTools'],
     install_requires=['numpy',
+                       'pandas',
+                       'fractional',
+                       'networkx',
+                       'pytest',
+                       'pytest-html'
                       ],
 
     classifiers=[
