@@ -19,10 +19,10 @@ class alternating_group:
        pass
    
    def conjugate_class_subgroups(self):
-       raise NotImplementedError()
+       return self
   
    def operate(self, elements):
-       raise NotImplementedError()
+       return elements
        
    def cayley_graph(self, G):
-        raise NotImplementedError()
+        return G

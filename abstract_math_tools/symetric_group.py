@@ -1,27 +1,23 @@
 class symetric_group:
     
-    def __init__ (self, n):
+   def __init__ (self, n):
         self.n = n
         
-    def is_isometric(H):
-        pass
+   def is_isomorphic(self):
+        return G
     
-    def is_normal(H):
-        pass
+   def is_normal(self):
+        return self
     
-    def order():
-        pass
+   def order(self):
+        return 
+   def is_abelian(self):
+        return
     
-    def order_element(g):
-        pass
+   def conjugate_class_subgroups(self):
+        return []
     
-    def is_abelian():
-        pass
-    
-    def conjugate_class_subgroups():
-        pass
-    
-    def operate(elements):
-        pass
-    
+   def operate(self,elements):
+        return elements
+  
     

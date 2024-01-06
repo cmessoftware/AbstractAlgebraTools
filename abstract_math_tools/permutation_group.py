@@ -1,27 +1,33 @@
+from utils.nt_basics import factorial
+
+
 class permutation_group:
     
     def __init__ (self, n):
         self.n = n
         
-    def is_isometric(H):
-        pass
+    def is_isomorphic(self):
+        return G
     
-    def is_normal(H):
-        pass
+    def is_normal(self):
+        return self
     
-    def order():
-        pass
+    def order(self):
+        return 
     
     def order_element(g):
-        pass
+        return g
     
-    def is_abelian():
-        pass
+    def is_abelian(self):
+        return
     
-    def conjugate_class_subgroups():
-        pass
+    def cardinality(self):
+       return factorial(self.n)    
     
-    def operate(elements):
-        pass
+    def conjugate_class_subgroups(self):
+        return []
+    
+    def binary_operation(self,elements):
+        return elements
   
-    # sigma = G("(1,3) (2,5,4)")
+    

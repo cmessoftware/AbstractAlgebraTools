@@ -16,13 +16,12 @@ class cyclic_permutation_group:
        return g
    
    def is_abelian(self):
-       pass
+       return self
    
    def conjugate_class_subgroups(self):
-       raise NotImplementedError()
-  
+       return self
    def operate(self, elements):
-       raise NotImplementedError()
+       return elements
        
    def cayley_graph(self, G):
-        raise NotImplementedError()
+       return G

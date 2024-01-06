@@ -5,12 +5,7 @@ class dihedral_group:
     
    def __init__ (self, n):
        self.n = n
-       
          
-   def get_n(self):
-        return self.n
-    
-       
    def is_isomorphic(self,H):
        return H
    
@@ -26,20 +21,19 @@ class dihedral_group:
    def is_abelian(self, group):
        for a in group:
         for b in group:
-            if operation(self, a, b) != operation(self, a ,b):
+            if self.operate(self, a, b) != self.operate(self, a ,b):
                 return False
         return True
    
    def conjugate_class_subgroups(self):
-       raise NotImplementedError()
+       return self
   
    def operate(self, elements):
-       raise NotImplementedError()
+       return elements
        
-   def cayley_graph(self, G):
-        raise NotImplementedError()
-    
+   def cayley_table(self, G):
+        return G
      
-   def operation(self, a,b):
+   def operate(self, a,b):
         return (a+b)%self.n
         

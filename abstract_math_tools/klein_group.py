@@ -3,7 +3,7 @@ class klein_group:
    def __init__ (self, n):
        self.n = n
        
-   def is_isometric(self,H):
+   def is_isomorphic(self,H):
        return H
    
    def is_normal(self, H):
@@ -16,13 +16,13 @@ class klein_group:
        return g
    
    def is_abelian(self):
-       pass
+       return self
    
    def conjugate_class_subgroups(self):
-       raise NotImplementedError()
+       return self
   
    def operate(self, elements):
-       raise NotImplementedError()
+       return elements
        
-   def cayley_graph(self, G):
-        raise NotImplementedError()
+   def cayley_table(self, G):
+        return G
