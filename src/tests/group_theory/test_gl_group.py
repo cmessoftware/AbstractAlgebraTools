@@ -1,5 +1,5 @@
 import pytest
-from abstract_math_tools.gl_group import gl_group
+from src.group_theory.gl_group import gl_group
 
 @pytest.fixture
 def gl():

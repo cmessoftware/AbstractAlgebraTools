@@ -1,5 +1,5 @@
 import pytest
-from   abstract_math_tools.utils.nt_basics import gcd, xgcd, mod, exp_mod, mod_inverse, phi_function, pi_function
+from   src.utils.nt_basics import gcd, xgcd, mod, exp_mod, mod_inverse, phi_function, pi_function
 
 
 # Test cases for gcd function

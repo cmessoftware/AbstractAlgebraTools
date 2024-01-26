@@ -1,5 +1,5 @@
 import pytest
-from abstract_math_tools.alternating_group import alternating_group
+from src.group_theory.alternating_group import alternating_group
 
 n = 5
 

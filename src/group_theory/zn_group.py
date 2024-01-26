@@ -1,20 +1,28 @@
 from itertools import permutations
-from .utils.nt_basics import factorial
+from .utils.nt_basics import has_unique_numbers, has_bijections, gcd
 
-class zn_plus_group:
+class zn_group:
     
    def __init__ (self, n):
        self.n = n
        self.G = [i for i in range(n)]
        
    def is_isomorphic(self,H):
-       return H
+       if self.order(H) != self.order(self.G):
+           return False
+       if not has_unique_numbers(H):
+           return False
+       if not has_bijections(H,self.G):
+           return False
+        
+       return True                 
+           
    
    def is_normal(self, H):
        return H
    
    def order(self,a):
-       for i in range(1000):
+       for i in range(100):
            if (a*(i+1))%self.n == 0:
                return i+1
     
@@ -56,15 +64,14 @@ class zn_plus_group:
     symmetric_group = list(permutations(range(1, n + 1)))
     return find_conjugacy_classes(symmetric_group)
 
-   def cardinality(self, n):
-       return factorial(n)    
+   def cardinality(self,n):
+       return n    
   
    def binary_operation(self,a,b):
        return (a+b)%self.n
       
-       
    def gens(self):
-       return self
+       return [i for i in range(self.n) if gcd(i,self.n) == 1 ]
         
    def cayley_table(self):
         return []

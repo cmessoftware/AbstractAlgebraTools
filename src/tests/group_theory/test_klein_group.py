@@ -1,5 +1,5 @@
 import pytest
-from abstract_math_tools.klein_group import klein_group
+from src.group_theory.klein_group import klein_group
 
 @pytest.fixture
 def kg():

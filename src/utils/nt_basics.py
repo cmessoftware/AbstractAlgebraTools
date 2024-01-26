@@ -8,6 +8,24 @@ def factorial(n):
     return n*factorial(n-1)
 
 
+def has_bijections(arr1, arr2):
+    if len(arr1) != len(arr2):
+        return False
+    
+    mapping = {}
+    
+    for i in range(len(arr1)):
+        if arr1[i] in mapping:
+            if mapping[arr1[i]] != arr2[i]:
+                return False
+        else:
+            mapping[arr1[i]] = arr2[i]
+    
+    return True
+
+def has_unique_numbers(arr):
+    return len(arr) == len(set(arr))
+
 def gcd(a,b):
     return math.gcd(a,b)
 
@@ -32,19 +50,14 @@ def mod_inverse(a, n):
         raise ValueError(f"The modular inverse does not exist for {a} modulo {n}")
     return x % n
 
+
 def phi_function(n):
-    result = n
-    p = 2
-    while p * p <= n:
-        if n % p == 0:
-            while n % p == 0:
-                n //= p
-            result -= result // p
-        p += 1
-    if n > 1:
-        result -= result // n
-    return result
-
-
+    amount = 0
+    for k in range(1,n+1):
+        if gcd(n,k) == 1:
+            amount += 1
+    return amount
+   
+  
 def pi_function(n):
     return primepi(n)

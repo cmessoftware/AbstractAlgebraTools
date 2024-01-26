@@ -1,13 +1,13 @@
-from utils.nt_basics import factorial
 
+from .utils.nt_basics import factorial
 
 class permutation_group:
     
     def __init__ (self, n):
         self.n = n
         
-    def is_isomorphic(self):
-        return G
+    def is_isomorphic(self,H):
+        return H
     
     def is_normal(self):
         return self

@@ -1,2 +1,2 @@
 # AbstractAlgebraTools
-Python abstract algebra tools
+Python abstract math tools

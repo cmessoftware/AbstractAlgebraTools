@@ -1,5 +1,5 @@
 import pytest
-from abstract_math_tools.cyclic_group import cyclic_group
+from src.group_theory.cyclic_group import cyclic_group
 
 @pytest.fixture
 def cg():

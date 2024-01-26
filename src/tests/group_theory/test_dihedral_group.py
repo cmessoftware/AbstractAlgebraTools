@@ -1,5 +1,5 @@
 import pytest
-from abstract_math_tools.dihedral_group import dihedral_group
+from src.group_theory.dihedral_group import dihedral_group
 
 
 @pytest.fixture

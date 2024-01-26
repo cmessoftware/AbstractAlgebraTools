@@ -1,7 +1,10 @@
 {
     "python.testing.pytestArgs": [
-        "pygroup"
+        "abstract_math_tools"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "python.analysis.extraPaths": [
+        "./abstract_math_tools/utils"
+    ]
 }

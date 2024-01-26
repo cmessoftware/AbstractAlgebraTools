@@ -1,5 +1,5 @@
 import pytest
-from abstract_math_tools.permutation_group import permutation_group
+from src.group_theory.permutation_group import permutation_group
 
 n = 5
 
@@ -35,22 +35,10 @@ def test_is_abelian(pg):
     assert pg.is_abelian() == True
     
 @pytest.mark.parametrize("expected", [
-    ([(4, 3, 2, 1), (1, 2, 4, 3)]),
-    ([(4, 2, 3, 1), (1, 2, 4, 3)]),
-    ([(4, 1, 3, 2), (1, 2, 4, 3)]),
-    ([(3, 4, 2, 1), (1, 2, 4, 3)]), 
-    ([(3, 2, 4, 1), (1, 2, 4, 3)]), 
-    ([(3, 1, 4, 2), (1, 2, 4, 3)]), 
-    ([(2, 4, 3, 1), (1, 2, 4, 3)]), 
-    ([(2, 3, 4, 1), (1, 2, 4, 3)]),
-    ([(2, 1, 4, 3), (1, 2, 4, 3)]),
-    ([(1, 4, 3, 2), (1, 2, 4, 3)]),
-    ([(1, 3, 4, 2), (1, 2, 4, 3)]),
-    ([(1, 2, 4, 3)]),
-    ([(1, 2, 3, 4)])    
+    ([(4, 3, 2, 1), (1, 2, 4, 3)])
 ])
-def test_conjugate_class_subgroups(pg):
-    assert  pg.conjugate_class_subgroups(n) == [(1,2,3),(3,2,4)]
+def test_conjugate_class_subgroups(pg,expected):
+    assert  pg.conjugate_class_subgroups(pg) == expected
 
 @pytest.mark.parametrize("n, expected", [
     (1, 1),
