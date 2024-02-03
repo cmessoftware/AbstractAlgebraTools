@@ -1,3 +1,5 @@
+import sys
+sys.path.append("../..")
 import pytest
 from src.group_theory.dihedral_group import dihedral_group
 

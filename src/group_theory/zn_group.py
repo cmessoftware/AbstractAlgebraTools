@@ -1,11 +1,17 @@
 from itertools import permutations
-from .utils.nt_basics import has_unique_numbers, has_bijections, gcd
+from ..utils.nt_basics import has_unique_numbers, has_bijections, phi_function, gcd, is_generator
+import math
 
-class zn_group:
-    
-   def __init__ (self, n):
-       self.n = n
-       self.G = [i for i in range(n)]
+class   zn_group:
+   
+   def __init__(self, n=None, G=None):
+       if n is not None and G is None:
+           self.n = n
+           self.G = []
+           self.G = list(range(1, self.n + 1))
+       elif n is not None and G is not None:
+           self.n = n
+           self.G = G
        
    def is_isomorphic(self,H):
        if self.order(H) != self.order(self.G):
@@ -19,15 +25,36 @@ class zn_group:
            
    
    def is_normal(self, H):
-       return H
+       if len(self.G) != len(H):
+           return False
+       
+       for i in self.G:
+           for j in H:
+               if self.binary_operation(i,j) != self.binary_operation(j,i):
+                   return False
+       return True
+       
+   def order(self,H):
+       return self.cardinality(H)
    
-   def order(self,a):
-       for i in range(100):
-           if (a*(i+1))%self.n == 0:
-               return i+1
-    
-       return float('inf')
-   
+   def order_element(self,e):
+       if e == 0:
+              return 1
+       order = 1
+       acum = e
+       x = 0
+       while x <= self.n:
+              if self.binary_operation(acum,e) != 0:
+                     order += 1
+                     acum += e
+              else:
+                     order += 1
+                     break
+       
+              x += 1 
+                     
+       return order
+      
            
    def is_abelian(self):
        for a in self.G:
@@ -64,14 +91,26 @@ class zn_group:
     symmetric_group = list(permutations(range(1, n + 1)))
     return find_conjugacy_classes(symmetric_group)
 
-   def cardinality(self,n):
-       return n    
+   def cardinality(self,H):
+       return len(list(H))
   
    def binary_operation(self,a,b):
        return (a+b)%self.n
-      
-   def gens(self):
-       return [i for i in range(self.n) if gcd(i,self.n) == 1 ]
+   
+   #Get genetatos using the phi function approach   
+   def gens(self,H):
+       c = self.cardinality(H)
+       generators = []
+       for a in range(2, c):
+           if is_generator(a, c):
+               generators.append(a)
+               
+       return generators
+
+           
+
+   
+       
         
    def cayley_table(self):
         return []

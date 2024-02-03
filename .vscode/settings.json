@@ -5,6 +5,7 @@
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "python.analysis.extraPaths": [
-        "./abstract_math_tools/utils"
+        "./abstract_math_tools/utils",
+        "./src"
     ]
 }

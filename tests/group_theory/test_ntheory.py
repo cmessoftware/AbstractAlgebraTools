@@ -1,3 +1,5 @@
+import sys
+sys.path.append("../..")
 import pytest
 from   src.utils.nt_basics import gcd, xgcd, mod, exp_mod, mod_inverse, phi_function, pi_function
 

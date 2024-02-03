@@ -1,5 +1,5 @@
 
-from .utils.nt_basics import factorial
+from ..utils.nt_basics import factorial
 
 class permutation_group:
     

@@ -1,3 +1,5 @@
+import sys
+sys.path.append("../..")
 import pytest
 from src.group_theory.klein_group import klein_group
 

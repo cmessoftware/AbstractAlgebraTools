@@ -1,3 +1,5 @@
+import sys
+sys.path.append("../..")
 import pytest
 from src.group_theory.alternating_group import alternating_group
 

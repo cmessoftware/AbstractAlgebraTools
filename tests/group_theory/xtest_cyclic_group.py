@@ -1,11 +1,12 @@
+import sys
+sys.path.append("../..")
 import pytest
-from src.group_theory.cyclic_permutation_group import cyclic_permutation_group
+from src.group_theory.cyclic_group import cyclic_group
 
 @pytest.fixture
 def cg():
     n = 5
-    zn =cyclic_permutation_group(n)
-    return zn
+    return cyclic_group(n)
     
 
 def test_is_isomorphic(cg):
@@ -54,3 +55,5 @@ def test_cayley_table(cg):
 # Execute tests with pytest
 if __name__ == "__main__":
     pytest.main()
+
+

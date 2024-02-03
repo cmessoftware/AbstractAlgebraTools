@@ -2,6 +2,10 @@ import math
 from sympy import primepi
 
 def factorial(n):
+    
+    if n < 0:
+        raise "n must be major than 0"
+    
     if n == 0 or n == 1:
         return 1
     
@@ -57,7 +61,11 @@ def phi_function(n):
         if gcd(n,k) == 1:
             amount += 1
     return amount
-   
+
+def is_generator(a, n):
+    if gcd(a, n) != 1:
+        return False
+    return pow(a, phi_function(n), n) == 1 and pow(a, n-1, n) == 1 
   
 def pi_function(n):
     return primepi(n)

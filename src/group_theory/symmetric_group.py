@@ -1,4 +1,7 @@
-class symetric_group:
+
+from src.utils.nt_basics import factorial
+
+class symmetric_group:
     
    def __init__ (self, n):
         self.n = n
@@ -10,7 +13,8 @@ class symetric_group:
         return self
     
    def order(self):
-        return 
+        return factorial(self.n)
+   
    def is_abelian(self):
         return
     
